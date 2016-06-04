@@ -10,4 +10,23 @@ class homePage extends CI_Controller {
 	{
 		$this->load->view('homePage');
 	}
+
+	/**
+	* Example of what happens when you send an item through the URL.
+	* http://localhost/howToCodeIgnite/index.php/homePage/testDataSet/{Variable}/
+	**/
+	public function testDataSet($test)
+	{
+		$data['test'] = $test;
+		$this->load->view('testDataExample', $data);
+	}
+
+	/**
+	* Home page submits to this page in the url.
+	**/
+	public function submitData()
+	{
+		$test = $this->input->get('test');
+		echo $test;
+	}
 }
